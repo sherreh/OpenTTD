@@ -2589,6 +2589,12 @@ void HandleKeypress(uint keycode, char32_t key)
 		}
 	}
 
+	// Ignore WASD hotkeys if used to control view.
+	if (_settings_client.gui.wasd_control &&
+		(keycode == 'W' || keycode == 'A' || keycode == 'S' || keycode == 'D')) {
+		return;
+	}
+
 	/* Call the event, start with the uppermost window, but ignore the toolbar. */
 	for (Window *w : Window::IterateFromFront()) {
 		if (w->window_class == WC_MAIN_TOOLBAR) continue;

@@ -223,6 +223,8 @@ struct GUISettings {
 
 	bool   scale_bevels;                     ///< bevels are scaled with GUI scale.
 
+	bool wasd_control;
+
 	/**
 	 * Returns true when the user has sufficient privileges to edit newgrfs on a running game
 	 * @return whether the user has sufficient privileges to edit newgrfs in an existing game
